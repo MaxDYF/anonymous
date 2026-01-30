@@ -1,6 +1,13 @@
-# Sim-3DAfford
+<center><h1>  Sim-3DAfford </h1>  </center>
 
-[![Hugging Face](https://img.shields.io/badge/HuggingFace-Model-yellow)](https://huggingface.co/mexdyf/Sim-3DAfford) [![Dataset](https://img.shields.io/badge/Huggingface-Dataset-blue)](https://huggingface.co/datasets/mexdyf/3DAffordData)
+<center>
+    <a href="https://huggingface.co/mexdyf/Sim-3DAfford" target="_blank">
+      <img src="https://img.shields.io/badge/HuggingFace-Model-yellow" alt="Hugging Face">
+    </a> 
+    <a href="https://huggingface.co/datasets/mexdyf/3DAffordData" target="_blank">
+    	<img src="https://img.shields.io/badge/Huggingface-Dataset-blue" alt="Dataset">
+    </a>
+</center>
 
 ![](images/1.png)
 
