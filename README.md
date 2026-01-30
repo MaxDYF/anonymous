@@ -1,25 +1,30 @@
-
 # Sim-3DAfford
 
-[![Hugging Face](https://img.shields.io/badge/HuggingFace-Model-yellow)](https://huggingface.co/mexdyf/Sim-3DAfford)
+[![Hugging Face](https://img.shields.io/badge/HuggingFace-Model-yellow)](https://huggingface.co/mexdyf/Sim-3DAfford) [![Dataset](https://img.shields.io/badge/Huggingface-Dataset-blue)](https://huggingface.co/datasets/mexdyf/3DAffordData)
 
-[![Dataset](https://img.shields.io/badge/Huggingface-Dataset-blue)](https://huggingface.co/datasets/mexdyf/3DAffordData)
+![](images/1.png)
+
+Sim-3DAfford is a novel framework designed to bridge the "interaction granularity gap" in 3D asset generation. While current methods focus on part-level articulation, they often fail to identify the specific localized regions where interactions actually occur.
+
+Our framework generates **simulation-ready 3D assets** from a **single image and an interaction instruction**. Unlike existing methods, Sim-3DAfford predicts:
+
+1. **Structured Physical Attributes**: Real-world physical properties for simulation.
+2. **Articulated Geometry**: Precise 3D structures with movable parts.
+3. **Fine-Grained Affordance Patches**: Explicitly localized surface regions (contact priors) that are physically actionable.
+
+By unifying these representations, Sim-3DAfford enables 3D assets to be directly imported into physics engines for downstream robotic manipulation tasks with unprecedented precision
 
 ## Installation
 
-1. Create the Conda environment:
+Run the installation script:
 
 ```
-conda env create sim3dafford
+. ./setup.sh --new-env --basic --xformers --flash-attn --diffoctreerast --spconv --mipgaussian --kaolin --nvdiffrast
 ```
 
-2. Install python dependency:
+## Data
 
-```
-pip install -r requirements.txt
-```
-
-3. Download the dataset `3DAffordData` and unzip to `./dataset`:
+Download the dataset `3DAffordData` and unzip to `./dataset`:
 
 ```
 hf download mexdyf/3DAffordData \
@@ -30,7 +35,35 @@ mkdir dataset
 7z x Selected_20260127_110943.7z.001 -o dataset
 ```
 
-4. Start training:
+## Inference
+
+Download the pre-train model from huggingface:
+
+```
+python script/download.py
+```
+
+Run the generating inference code:
+
+```
+python inference/1_vlm_demo.py
+python inference/2_decoder.py
+python inference/3_split.py
+python inference/5_simready_gen.py
+```
+
+Run affordance inference on one image:
+
+```
+python inference/4_affordance.py \
+  --image_path ./example/0.png \
+  --query "grasp" \
+  --save_output ./test_demo/0/affordance.txt
+```
+
+## Training
+
+Run training with:
 
 ```
 chmod +x train.sh
