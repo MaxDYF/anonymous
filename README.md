@@ -1,5 +1,5 @@
 <div align="center">
-    <h1>  Sim-3DAfford </h1>
+    <h1>  From Parts to Patches: Fine-Grained Affordance Grounding for 3D Assets Physics-Aware Interaction </h1>
     <a href="https://huggingface.co/mexdyf/Sim-3DAfford" target="_blank">
       <img src="https://img.shields.io/badge/HuggingFace-Model-yellow" alt="Hugging Face">
     </a> 
