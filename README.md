@@ -1,13 +1,12 @@
-<center><h1>  Sim-3DAfford </h1>  </center>
-
-<center>
+<div align="center">
+    <h1>  Sim-3DAfford </h1>
     <a href="https://huggingface.co/mexdyf/Sim-3DAfford" target="_blank">
       <img src="https://img.shields.io/badge/HuggingFace-Model-yellow" alt="Hugging Face">
     </a> 
     <a href="https://huggingface.co/datasets/mexdyf/3DAffordData" target="_blank">
     	<img src="https://img.shields.io/badge/Huggingface-Dataset-blue" alt="Dataset">
     </a>
-</center>
+</div>
 
 ![](images/1.png)
 
@@ -75,4 +74,5 @@ Run training with:
 ```
 chmod +x train.sh
 ./train.sh
+```<center><h1>  Sim-3DAfford </h1>  </center>
 ```
